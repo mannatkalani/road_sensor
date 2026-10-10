@@ -1,0 +1,10 @@
+Model,Held-out route,Macro F1
+Logistic Regression,A,0.7836
+Logistic Regression,B,0.732
+Logistic Regression,C,0.8042
+Random Forest,A,0.9311
+Random Forest,B,0.8591
+Random Forest,C,0.9028
+XGBoost,A,0.947
+XGBoost,B,0.873
+XGBoost,C,0.926

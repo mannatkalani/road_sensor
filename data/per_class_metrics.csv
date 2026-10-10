@@ -1,0 +1,10 @@
+Model,Class,Precision,Recall,F1
+Logistic Regression,Smooth,0.9965,0.9305,0.9624
+Logistic Regression,Speed breaker,0.4561,0.8966,0.6047
+Logistic Regression,Pothole,0.4066,0.9487,0.5692
+Random Forest,Smooth,0.991,0.9983,0.9946
+Random Forest,Speed breaker,0.9259,0.8621,0.8929
+Random Forest,Pothole,1.0,0.8205,0.9014
+XGBoost,Smooth,0.9934,0.9967,0.995
+XGBoost,Speed breaker,0.963,0.8966,0.9286
+XGBoost,Pothole,0.9189,0.8718,0.8947

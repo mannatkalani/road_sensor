@@ -1,0 +1,4 @@
+Model,Accuracy,Macro F1,MCC,CV Macro F1,Macro ROC-AUC,Pothole recall,Speed breaker recall
+XGBoost,0.9906,0.9395,0.9058,0.9153,0.9929,0.8718,0.8966
+Random Forest,0.9898,0.9296,0.8961,0.8977,0.9898,0.8205,0.8621
+Logistic Regression,0.9303,0.7121,0.613,0.7733,0.9851,0.9487,0.8966

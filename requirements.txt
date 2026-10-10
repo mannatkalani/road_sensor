@@ -1,0 +1,15 @@
+# RoadPulse - pinned for Python 3.11
+streamlit==1.65.0
+pandas==3.0.2
+numpy==2.4.4
+scipy==1.17.1
+scikit-learn==1.8.0
+xgboost==3.2.0
+joblib==1.5.3
+folium==0.20.0
+plotly==7.1.0
+openpyxl==3.1.5
+matplotlib==3.10.8
+pytest==9.1.1
+# Optional: richer SHAP-based event explanations (the app falls back to
+# "importance x deviation" without it):  pip install shap

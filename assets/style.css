@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --bg: #0B0F14; --panel: #131A22; --border: #1F2A36; --text: #E6EDF3; --muted: #8B98A5;
+  --amber: #FFB020; --red: #FF5A4F; --teal: #2DD4BF;
+  --heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* ---------- base ---------- */
+html, body, .stApp, [data-testid="stAppViewContainer"] { background: var(--bg); color: var(--text); font-family: var(--body); }
+h1, h2, h3, h4, .rp-wordmark { font-family: var(--heading) !important; letter-spacing: -0.015em; color: var(--text); }
+p, li, label, .stMarkdown { font-family: var(--body); }
+a { color: var(--amber); }
+[data-testid="stMainBlockContainer"], .block-container { max-width: 1240px; padding-top: 2.6rem; padding-bottom: 4rem; }
+
+/* hide Streamlit chrome we replace (menu, footer, deploy toolbar) */
+#MainMenu, footer, [data-testid="stToolbar"], [data-testid="stDecoration"] { display: none !important; }
+header[data-testid="stHeader"] { background: transparent; height: 2.25rem; }
+
+/* keyboard focus is always visible */
+:focus-visible { outline: 2px solid var(--amber) !important; outline-offset: 2px; }
+
+/* ---------- sticky header ---------- */
+div[data-testid="stElementContainer"]:has(.rp-header) { position: sticky; top: 2.25rem; z-index: 900; }
+.rp-header { display: flex; align-items: center; gap: .75rem; background: var(--bg); border-bottom: 1px solid var(--border); padding: .5rem .1rem; }
+.rp-glyph { width: 26px; height: 4px; border-radius: 2px; background: repeating-linear-gradient(90deg, var(--amber) 0 7px, transparent 7px 11px); }
+.rp-wordmark { font-size: 1.15rem; font-weight: 500; }
+.rp-wordmark b { color: var(--amber); font-weight: 700; }
+.rp-tag { color: var(--muted); font-size: .85rem; }
+.rp-status { margin-left: auto; font-family: var(--mono); font-size: .76rem; color: var(--muted); }
+
+/* ---------- honesty banner ---------- */
+.rp-banner { border: 1px solid var(--border); border-left: 3px solid var(--amber); background: rgba(255,176,32,.06);
+  border-radius: 8px; padding: .5rem .85rem; font-size: .84rem; color: var(--muted); line-height: 1.4; }
+
+/* ---------- hero: the one memorable element is the road centerline ---------- */
+.rp-hero { background: var(--panel); border: 1px solid var(--border); border-top: 3px solid var(--amber); border-radius: 14px;
+  padding: 1.5rem 1.8rem 1.3rem; margin: .8rem 0 1.2rem; }
+.rp-hero h1 { margin: 0 0 .35rem; font-size: 2.1rem; line-height: 1.15; font-weight: 700; }
+.rp-hero p { margin: 0; color: var(--muted); max-width: 68ch; line-height: 1.5; }
+.rp-centerline { height: 4px; margin-top: 1.15rem; border-radius: 2px;
+  background: repeating-linear-gradient(90deg, var(--amber) 0 30px, transparent 30px 58px); }
+
+/* ---------- sections, tiles, chips, lists ---------- */
+.rp-section { margin: 1.4rem 0 .15rem; font-size: 1.15rem; font-weight: 700; }
+.rp-caption { color: var(--muted); font-size: .86rem; margin-bottom: .5rem; max-width: 80ch; }
+.rp-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin: .5rem 0 1.2rem; }
+.rp-tile { background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--border); border-radius: 10px; padding: .8rem 1rem; }
+.rp-tile .l { color: var(--muted); font-size: .82rem; margin-bottom: .3rem; }
+.rp-tile .v { font-family: var(--mono); font-weight: 700; font-size: 1.6rem; line-height: 1.1; color: var(--text); }
+.rp-tile .s { color: var(--muted); font-size: .78rem; margin-top: .35rem; line-height: 1.35; }
+.rp-tile.amber { border-left-color: var(--amber); } .rp-tile.red { border-left-color: var(--red); } .rp-tile.teal { border-left-color: var(--teal); }
+.rp-chip { display: inline-block; padding: .12rem .65rem; margin: 0 .4rem .4rem 0; border: 1px solid var(--border); border-radius: 999px;
+  font-size: .78rem; color: var(--muted); background: var(--panel); }
+.rp-chip.amber { color: var(--amber); border-color: rgba(255,176,32,.45); }
+.rp-chip.teal { color: var(--teal); border-color: rgba(45,212,191,.45); }
+.rp-chip.red { color: var(--red); border-color: rgba(255,90,79,.45); }
+.rp-empty { background: var(--panel); border: 1px dashed var(--border); border-radius: 12px; padding: 1.2rem 1.4rem; color: var(--muted); margin: 1rem 0; line-height: 1.5; }
+.rp-empty b { color: var(--text); font-family: var(--heading); font-size: 1.05rem; }
+.rp-list { margin: .3rem 0 1rem; padding-left: 1.2rem; color: var(--text); line-height: 1.55; }
+.rp-list li { margin-bottom: .3rem; }
+
+/* ---------- Streamlit components ---------- */
+section[data-testid="stSidebar"] { background: var(--panel); border-right: 1px solid var(--border); }
+[data-testid="stSidebarNav"] a[aria-current="page"] { border-left: 3px solid var(--amber); background: rgba(255,176,32,.08); }
+[data-baseweb="tab-list"] { gap: .25rem; border-bottom: 1px solid var(--border); }
+button[role="tab"] { color: var(--muted); font-family: var(--body); font-weight: 500; }
+button[role="tab"][aria-selected="true"] { color: var(--text); }
+[data-baseweb="tab-highlight"] { background: var(--amber) !important; }
+[data-testid="stBaseButton-primary"] { background: var(--amber); color: #0B0F14; border: 1px solid var(--amber); font-weight: 600; border-radius: 8px; }
+[data-testid="stBaseButton-primary"]:hover { filter: brightness(1.08); }
+[data-testid="stBaseButton-secondary"], [data-testid="stBaseLinkButton-secondary"] { border: 1px solid var(--border); border-radius: 8px; background: transparent; color: var(--text); }
+[data-testid="stBaseButton-secondary"]:hover, [data-testid="stBaseLinkButton-secondary"]:hover { border-color: var(--amber); color: var(--amber); }
+[data-testid="stExpander"] { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; }
+[data-testid="stAlert"] { border-radius: 10px; }
+[data-testid="stFileUploaderDropzone"] { background: var(--panel); border: 1px dashed var(--border); border-radius: 12px; }
+[data-testid="stDataFrame"] { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+[data-testid="stMetricValue"] { font-family: var(--mono); }
+iframe { border: 1px solid var(--border); border-radius: 12px; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 720px) {
+  .rp-hero { padding: 1.1rem 1.1rem 1rem; } .rp-hero h1 { font-size: 1.55rem; }
+  .rp-tag { display: none; } .rp-tiles { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
