@@ -1,5 +1,5 @@
 # RoadPulse
-
+   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mannatkalani/road_sensor/blob/main/notebooks/road_sensor.ipynb)
 **Find speed breakers and potholes from smartphone sensor data, put them on a map, and rank them for repair.**
 
 RoadPulse is a multi-page Streamlit app built on a window-based machine-learning model. Upload ride files (accelerometer, gyroscope, speed, GPS), and the app detects road events, explains each detection, lets you choose how cautious the detector is, confirms spots across rides, and produces a repair priority list with exports.
